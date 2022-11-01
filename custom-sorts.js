@@ -53,10 +53,35 @@ function reverseBaseSort(arr) {
 }
 
 function frequencySort(arr) {
-  // Your code here
-}
-console.log(Math.floor(Math.log10(164)))
-console.log(Math.floor(Math.log10(671)))
+
+  let obj = {}
+
+  for (let num of arr) {
+
+    if (!obj[num]) {
+      obj[num] = 1
+    } else {
+      obj[num]++
+    }
+  }
+console.log(obj)
+
+  arr.sort((a,b) => {
+      if (obj[a] < obj[b]) {
+        return -1
+      }
+      if (obj[a] === obj[b]) {
+        return b - a
+      }
+  })
+  return arr;
+};
+
+frequencySort([2, 3, 1, 3, 2])
+ // => [1, 3, 3, 2, 2]
+
+// console.log(Math.floor(Math.log10(164)))
+// console.log(Math.floor(Math.log10(671)))
 module.exports = [
   oddEvenSort,
   validAnagrams,
