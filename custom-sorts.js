@@ -39,13 +39,24 @@ function validAnagrams(s, t) {
 };
 
 function reverseBaseSort(arr) {
-  // Your code here
+  arr.sort((a,b)=>{
+    // if ((Math.log10(a)) > (Math.log10(b))){
+    //   return b-a
+    // }
+    if (Math.floor(Math.log10(a)) === Math.floor(Math.log10(b))){
+      return a-b
+    } else {
+      return b-a
+    }
+  })
+  return arr
 }
 
 function frequencySort(arr) {
   // Your code here
 }
-
+console.log(Math.floor(Math.log10(164)))
+console.log(Math.floor(Math.log10(671)))
 module.exports = [
   oddEvenSort,
   validAnagrams,
